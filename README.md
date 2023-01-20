@@ -1,4 +1,4 @@
-# widget-demoservice
+# widget_project
 
 ## Project setup
 ```
