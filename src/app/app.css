@@ -7,3 +7,34 @@
     height: 100%;
     width: 100%;
 }
+.td{
+    border-radius: 20px;
+    background-color: #e6e6e6;
+    padding: 10px;
+    text-align: left;
+    width: 50%;
+}
+
+.tdblank{
+    width: 50%;
+}
+
+.th{
+    width: 50%;
+}
+
+.table{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    overflow-y: auto;
+    flex-direction: column;
+}
+.input{
+    width: 60%;
+}
+
+.maxlengh{
+    white-space: break-spaces;
+
+}

@@ -15,3 +15,11 @@ export interface MaskModel {
 export interface LoadMask{
     show: boolean
 }
+
+
+export interface Message{
+    id: number,
+    text: string,
+    datewrite: string,
+    typeMessage: string
+}

@@ -4,7 +4,7 @@ import Vuex from "vuex";
 import Component from "vue-class-component";
 import VueCookies from "vue-cookies";
 import keycloakInstance from "@/plugins/keycloak";
-import {State} from "@/store/model";
+import {Message, State} from "@/store/model";
 import axios from "axios";
 
 Vue.use(Vuex);
@@ -16,7 +16,8 @@ Vue.use(VueCookies);
 })
 export default class App extends Vue {
 
-    private name = ''
+    public messagedto ={ text : ''};
+    private name: Array<Message> = [];
 
     mounted(){
         axios.interceptors.request.use(async config => {
@@ -27,9 +28,10 @@ export default class App extends Vue {
             config.headers.common['Access-Control-Allow-Methods'] = 'GET,PUT,POST,DELETE,PATCH,OPTIONS'
             return config
         })
-        const result = axios.get('http://localhost:8085/api/me')
+        const result = axios.get('http://localhost:8086/api/message')
             .then((response: any) => {
                     //this.loadMask(false);
+                    console.log('OK save!!!!!' + response.data);
                     return response.data;
                 }
             )
@@ -49,5 +51,27 @@ export default class App extends Vue {
     set nameUser(data){
         this.name = data
     }
+
+
+    addProduct(){
+
+        const result = axios.post('http://localhost:8086/api/message', {'text': this.messagedto.text} )
+            .then((response: any) => {
+                    //this.loadMask(false);
+                    console.log('OK save!!!!!' + response.data);
+                    //return response.data;
+                }
+            )
+            .catch((error) => {
+                //this.loadMask(false);
+                console.log('Ошибка! Не могу связаться с API2. ' + error);
+            })
+        /*result.then((data)=>{
+            this.name = data
+        })*/
+        return "";
+    }
+
+
 
 }
