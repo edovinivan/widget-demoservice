@@ -54,21 +54,22 @@ export default class App extends Vue {
 
 
     addProduct(){
-
-        const result = axios.post('http://localhost:8086/api/message', {'text': this.messagedto.text} )
-            .then((response: any) => {
+        if (this.messagedto.text!=null && this.messagedto.text.length>2) {
+            const result = axios.post('http://localhost:8086/api/message', {'text': this.messagedto.text})
+                .then((response: any) => {
+                        //this.loadMask(false);
+                        console.log('OK save!!!!!' + response.data);
+                        //return response.data;
+                    }
+                )
+                .catch((error) => {
                     //this.loadMask(false);
-                    console.log('OK save!!!!!' + response.data);
-                    //return response.data;
-                }
-            )
-            .catch((error) => {
-                //this.loadMask(false);
-                console.log('Ошибка! Не могу связаться с API2. ' + error);
-            })
-        /*result.then((data)=>{
-            this.name = data
-        })*/
+                    console.log('Ошибка! Не могу связаться с API2. ' + error);
+                })
+            /*result.then((data)=>{
+                this.name = data
+            })*/
+        }
         return "";
     }
 

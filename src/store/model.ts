@@ -21,5 +21,10 @@ export interface Message{
     id: number,
     text: string,
     datewrite: string,
-    typeMessage: string
+    typeMessage: string,
+    users: Users
+}
+
+export interface Users{
+    name: string
 }

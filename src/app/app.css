@@ -9,7 +9,15 @@
 }
 .td{
     border-radius: 20px;
-    background-color: #e6e6e6;
+    background-color: #c9d6ec;
+    padding: 10px;
+    text-align: left;
+    width: 50%;
+}
+
+.tda{
+    border-radius: 20px;
+    background-color: #caecbf;
     padding: 10px;
     text-align: left;
     width: 50%;
@@ -23,6 +31,17 @@
     width: 50%;
 }
 
+.tbody{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.tr{
+    display: flex;
+    width: 100%
+}
+
 .table{
     width: 100%;
     height: 90%;
@@ -31,10 +50,50 @@
     flex-direction: column;
 }
 .input{
-    width: 60%;
+    width: 50%;
+    margin-bottom: 15px;
+
+    font-size: 13px;
+    padding: 6px 0 4px 10px;
+    border: 1px solid #cecece;
+    background: #F6F6f6;
+    border-radius: 8px;
+}
+
+.buttonsend{
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: .5em 2em;
+    outline: none;
+    border-width: 2px 0;
+    border-style: solid none;
+    border-color: #FDBE33 #000 #D77206;
+    border-radius: 6px;
+    background: linear-gradient(#F3AE0F, #E38916) #E38916;
+    transition: 0.2s;
 }
 
 .maxlengh{
     white-space: break-spaces;
 
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    cursor: pointer;
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance:none;
 }
