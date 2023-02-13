@@ -28,10 +28,10 @@ export default class App extends Vue {
             config.headers.common['Access-Control-Allow-Methods'] = 'GET,PUT,POST,DELETE,PATCH,OPTIONS'
             return config
         })
-        const result = axios.get('http://localhost:8086/api/message')
+        const result = axios.get('http://localhost:8020/api/message')
             .then((response: any) => {
                     //this.loadMask(false);
-                    console.log('OK save!!!!!' + response.data);
+                    console.log('OK save11!!!!!' + response.data);
                     return response.data;
                 }
             )
@@ -55,7 +55,7 @@ export default class App extends Vue {
 
     addProduct(){
         if (this.messagedto.text!=null && this.messagedto.text.length>2) {
-            const result = axios.post('http://localhost:8086/api/message', {'text': this.messagedto.text})
+            const result = axios.post('http://localhost:8020/api/message', {'text': this.messagedto.text})
                 .then((response: any) => {
                         //this.loadMask(false);
                         console.log('OK save!!!!!' + response.data);
