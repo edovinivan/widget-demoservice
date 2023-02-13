@@ -22,7 +22,7 @@
 
     <br>
     <form v-on:submit="addProduct" >
-      <input class="input" type="text" v-model="messagedto.text" placeholder="Сообщение" >      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input class="input" type="text" v-model="messagedto.text" placeholder="Сообщение" >
       <button type="submit" class="buttonsend">Отправить</button>
     </form>
 

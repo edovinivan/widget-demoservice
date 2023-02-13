@@ -1,4 +1,4 @@
-FROM node:lts-alpine
+FROM node:16
 
 # install simple http server for serving static content
 RUN npm install -g http-server
@@ -18,5 +18,5 @@ COPY . .
 # build app for production with minification
 RUN npm run build
 
-EXPOSE 3050
-CMD [ "http-server", "dist" ]
+EXPOSE 3020
+CMD [ "http-server", "dist", "-p", "3020", "push-state"]
